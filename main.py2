@@ -1,0 +1,6 @@
+#!/usr/bin/python2
+
+# from PG_test import DrawGameWin
+import PG_test
+
+PG_test.DrawGameWin()
