@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project NewTestGui -->
-<!-- Saved: 2017-10-09, 23:25:27 -->
+<!-- Saved: 2017-10-10, 23:16:36 -->
 <!-- Copyright (C) 2017 Thermoflux,  -->
 <Project version="5.1">
   <Language></Language>
@@ -13,10 +13,11 @@
   <Email></Email>
   <Eol index="0"/>
   <Sources>
-    <Source>DrawgameWin.py2</Source>
     <Source>PG_test.py</Source>
-    <Source>PG_test.py2</Source>
+    <Source>Towers.py</Source>
     <Source>__init__.py</Source>
+    <Source>comlib.py</Source>
+    <Source>enemy.py</Source>
     <Source>main.py2</Source>
     <Source>sprite.py</Source>
   </Sources>

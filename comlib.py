@@ -1,6 +1,7 @@
 #!/usr/bin/python2
 
-
-def enum(**enums):
-    return type('Enum', (), enums)
-    
+class comlib:
+    def enum(**enums):
+        return type('Enum', (), enums)
+            
+   

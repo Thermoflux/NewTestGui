@@ -2,7 +2,29 @@
 
 class Enemy:
     'Common base for enemys'
+     # Define Colors
     
+    def draw_stick_figure(screen, x, y):
+        import  pygame
+
+        BLACK = (0, 0, 0)
+        #WHITE = (255, 255, 255)
+        #GREEN = (0, 255, 0)
+        RED = (255, 0, 0)
+        # Head
+        pygame.draw.ellipse(screen, BLACK, [1 + x, y, 10, 10], 0)
+     
+        # Legs
+        pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [10 + x, 27 + y], 2)
+        pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [x, 27 + y], 2)
+     
+        # Body
+        pygame.draw.line(screen, RED, [5 + x, 17 + y], [5 + x, 7 + y], 2)
+     
+        # Arms
+        pygame.draw.line(screen, RED, [5 + x, 7 + y], [9 + x, 17 + y], 2)
+        pygame.draw.line(screen, RED, [5 + x, 7 + y], [1 + x, 17 + y], 2)
+        
     def square(self, pos):
         # foobar
         return
