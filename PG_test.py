@@ -13,13 +13,28 @@ Program to create 2D Tower Defense war zone
 
 """
 def DrawGameWin():    
+    
     import pygame
     
+    def draw_stick_figure(screen, x, y):
+        # Head
+        pygame.draw.ellipse(screen, BLACK, [1 + x, y, 10, 10], 0)
+     
+        # Legs
+        pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [10 + x, 27 + y], 2)
+        pygame.draw.line(screen, BLACK, [5 + x, 17 + y], [x, 27 + y], 2)
+     
+        # Body
+        pygame.draw.line(screen, RED, [5 + x, 17 + y], [5 + x, 7 + y], 2)
+     
+        # Arms
+        pygame.draw.line(screen, RED, [5 + x, 7 + y], [9 + x, 17 + y], 2)
+        pygame.draw.line(screen, RED, [5 + x, 7 + y], [1 + x, 17 + y], 2)
     # Define Colors
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
     GREEN = (0, 255, 0)
-    #RED = (255, 0, 0)
+    RED = (255, 0, 0)
     
     # Height and Width of the arena
     HEIGHT = 20
@@ -41,6 +56,8 @@ def DrawGameWin():
         Grid2D.append([])
         for coloum in range(COL):
             Grid2D[row].append(0)
+            if (coloum+row)%2 == 0 :
+                Grid2D[row].append(2)
     
     # print Grid2D
     
@@ -85,13 +102,17 @@ def DrawGameWin():
                 color = WHITE
                 if Grid2D[row][column] == 1:
                     color = GREEN
+                if Grid2D[row][column] == 2:
+                    color = BLACK
                 pygame.draw.rect(screen,
                                  color,
                                  [(MARGIN + WIDTH) * column + MARGIN,
                                   (MARGIN + HEIGHT) * row + MARGIN,
                                   WIDTH,
                                   HEIGHT])
-     
+                if Grid2D[row][column] != 2:
+                    draw_stick_figure(screen,(MARGIN + WIDTH) * column + MARGIN,
+                                    (MARGIN + HEIGHT) * row + MARGIN,)
         # Limit to 60 frames per second
         clock.tick(60)
      
@@ -102,7 +123,12 @@ def DrawGameWin():
     # on exit.
     pygame.quit()
     
-    return
+    
+ 
+    return 
 
+ 
+
+ 
 if __name__ == "__main__":
     DrawGameWin()
